@@ -1,0 +1,43 @@
+PODS:
+  - Baidu-Maps-iOS-SDK (2.6.0)
+  - BFPaperTabBarController (2.1.10):
+    - UIColor+BFPaperColors
+  - FSCalendar (0.5.4)
+  - GDIIndexBar (0.3.5)
+  - JGProgressHUD (1.2.3)
+  - MJRefresh (1.4.4)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - Reachability (3.2)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - UIColor+BFPaperColors (1.7.1)
+
+DEPENDENCIES:
+  - Baidu-Maps-iOS-SDK
+  - BFPaperTabBarController (~> 2.1.10)
+  - FSCalendar
+  - GDIIndexBar
+  - JGProgressHUD
+  - MJRefresh
+  - NJKWebViewProgress
+  - Reachability
+  - SDWebImage (~> 3.7)
+
+SPEC CHECKSUMS:
+  Baidu-Maps-iOS-SDK: 260447c2270b44470d7c0d49a7f1a154b4703973
+  BFPaperTabBarController: feeb736ab4249226e850ae6cd677697c26158079
+  FSCalendar: 2151b763fca88e341cd281b5c84f3bc437faba13
+  GDIIndexBar: 38a250ad02cea73fcb50a1cdad815b726a13a39e
+  JGProgressHUD: 02eb5fc5f1069dc3a6aaf74a0da06f05c2546f32
+  MJRefresh: e4a25dd1f3afbe5c547ff0d434cb40997803bc81
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  UIColor+BFPaperColors: b1efa4320e2f56c4b14f73232faf967ba0e5b4a2
+
+COCOAPODS: 0.37.2

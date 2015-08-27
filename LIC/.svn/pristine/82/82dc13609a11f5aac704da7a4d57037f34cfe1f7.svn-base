@@ -1,0 +1,30 @@
+//
+//  Records.swift
+//  LIC
+//
+//  Created by 温红权 on 15/4/23.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+import Foundation
+
+class Records :Mappable {
+ 
+    var parkingTime:NSTimeInterval?
+    
+    var drivingRecords:[Trance]!=[]
+    
+    var drivingMileage:Double?
+    
+    var drivingTime:Double?
+    
+    required init(){}
+    
+    func mapping(map: Map) {
+        
+         parkingTime <= map["parkingTime"]
+         drivingRecords <= map["drivingRecords"]
+         drivingMileage <= map["drivingMileage"]
+         drivingTime <= map["drivingTime"]
+    }
+}

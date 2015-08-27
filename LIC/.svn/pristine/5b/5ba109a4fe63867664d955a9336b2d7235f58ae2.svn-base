@@ -1,0 +1,471 @@
+//
+//  EbickMumTableViewController.swift
+//  LIC
+//
+//  Created by 温红权 on 15/3/12.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+import UIKit
+
+class EbickTableViewController: BaseTableController {
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initUI()
+        
+        
+        
+        var tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "viewtap:")
+        ebickView.addGestureRecognizer(tapGesture)
+        
+        
+        
+    }
+    //    @IBOutlet weak var locationTableCell: UITableViewCell!
+    
+    @IBOutlet weak var driveTableCell: UITableViewCell!
+    
+    @IBOutlet weak var ebickNamelable: UILabel!
+    @IBOutlet weak var ebickView: UIView!
+    
+    @IBOutlet weak var addrLable: UILabel!
+    @IBOutlet weak var meilView: UIView!
+    @IBOutlet weak var insuranceImage: UIImageView!
+    @IBOutlet weak var AllButton: UIButton!
+    @IBOutlet weak var todayButton: UIButton!
+    @IBOutlet weak var deviceConnectlable: UILabel!
+    @IBOutlet weak var deviceImage: UIImageView!
+    @IBOutlet weak var timelable: UILabel!
+    @IBOutlet weak var timeTitlelable: UILabel!
+    @IBOutlet weak var mileTitlelable: UILabel!
+    @IBOutlet weak var milelable: UILabel!
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func tel(sender: AnyObject) {
+        
+        CommonUtil.alertCustomService(self)
+    }
+    
+    
+    
+    func changenum(num:Double)->NSMutableAttributedString {
+        
+        var num1 = num / 1000.0;
+        
+        return  CommonUtil.SetLableTextAttr(saveNumber(num1),numSize:40.0, desc: "公里",descSize:12.0);
+    }
+    
+    func saveNumber(num:Double) ->String{
+        
+        return String(format:"%.1f", Double(Int(num*10)) / 10.0)
+    }
+    
+    func changetime(num:NSTimeInterval) ->NSMutableAttributedString  {
+        var MINS = ""
+        var hour:Int = 0
+        
+        var data = 0;
+        var hous = Double(num) / 3600.0;
+        
+        hour = Int(hous);
+        var mins = ( Double(num) - Double(hour) * 3600.0 ) / 60.0;
+        
+        if( mins - Double(Int(mins)) >= 0.5){
+            MINS=(Int(mins)+1).description;
+        }else{
+            MINS=Int(mins).description;
+        }
+        if (mins < 10) {
+            MINS = "0" + Int(mins).description;
+        }
+        if (hour > 0) {
+            
+            if(mins<=0){
+                
+                return  CommonUtil.SetLableTextAttr(hour.description,numSize:40.0, desc: "时",descSize:12.0)
+                
+            }
+            
+            var attributedString =  CommonUtil.SetLableTextAttr(hour.description,numSize:40.0, desc: "时",descSize:12.0)
+            
+            
+            attributedString.appendAttributedString(CommonUtil.SetLableTextAttr(MINS, numSize: 40.0, desc: "分", descSize: 12.0))
+            
+            return attributedString
+            
+        }
+        
+        
+        return CommonUtil.SetLableTextAttr(MINS,numSize:40.0, desc: "分",descSize:12.0)
+        
+    }
+    
+    
+    
+    @IBAction func todayAction(sender: AnyObject) {
+        todayButton.setBackgroundImage(UIImage(named: "ebick_today_press"), forState: UIControlState.Normal)
+        AllButton.setBackgroundImage(UIImage(named: "ebick_today_normal"), forState: UIControlState.Normal)
+        
+        
+        todayButton.setTitleColor(CommonUtil.UIColorFromRGB(0xffffff), forState: UIControlState.Normal)
+        AllButton.setTitleColor(CommonUtil.UIColorFromRGB(0x2BCD9C), forState: UIControlState.Normal)
+        //今日
+        mileTitlelable.text = "今日里程"
+        timeTitlelable.text = "行驶时间"
+        
+        
+        milelable.attributedText = changenum(Cache.EBICK.todayMileage)
+        
+        timelable.attributedText = changetime(Cache.EBICK.todayMUseTime)
+        
+        
+    }
+    @IBAction func totalAction(sender: AnyObject) {
+        
+        todayButton.setBackgroundImage(UIImage(named: "ebick_today_normal"), forState: UIControlState.Normal)
+        AllButton.setBackgroundImage(UIImage(named: "ebick_today_press"), forState: UIControlState.Normal)
+        
+        
+        AllButton.setTitleColor(CommonUtil.UIColorFromRGB(0xffffff), forState: UIControlState.Normal)
+        todayButton.setTitleColor(CommonUtil.UIColorFromRGB(0x2BCD9C), forState: UIControlState.Normal)
+        
+        //总计
+        mileTitlelable.text = "总计里程"
+        timeTitlelable.text = "行驶时间"
+        
+        
+        milelable.attributedText = changenum(Cache.EBICK.totalMileage)
+        
+        timelable.attributedText = changetime(Cache.EBICK.totalMUseTime)
+        
+        
+    }
+    func viewtap(gesture:UITapGestureRecognizer){
+        
+        
+        if(hasinsurance){
+            
+            CommonUtil.navToView(self, name: "ebickInfoPolicyTableController")
+            
+            
+        }else{
+            CommonUtil.navToView(self, name: "ebickInfoTableInfoController")
+            
+        }
+        
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    
+    func refreshUI(){
+        
+        if(Cache.EBICK.gpsId==nil){
+            return
+        }
+        
+        if(Cache.GPSINFO != nil){
+            if(Cache.GPSINFO.accessAccFlag == nil || Cache.GPSINFO.accessAccFlag != 1){
+                deviceImage.image = UIImage(named: "lexing_device_error")
+                
+            }
+        }
+    }
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "getebickinfo", name: "getebickinfo", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshUI", name: "getGpsInfo", object: nil)
+        
+        CommonUtil.getEbickInfo()
+        
+        
+        
+        getebickinfo()
+    }
+    
+    
+    override func webSocketMessageHandler(message: String) {
+        
+        
+        if( message.contains("ebike") || message.contains("realtimeTrajector")){
+            
+            CommonUtil.getEbickInfo()
+        }
+        
+        
+        
+        
+    }
+    
+    
+    var hasinsurance = false
+    var hasDevice = false
+    
+    func getebickinfo(){
+        
+        
+        if(Cache.USER?.isloginout == true){
+            chageViewStatus(0)
+            return
+        }
+        
+        CommonUtil.getGpsInfo()
+        
+        if(Cache.EBICK == nil ){
+            
+            insuranceImage.hidden = true
+            hasinsurance = false
+            hasDevice = false
+            
+            chageViewStatus(0)
+            return
+        }
+        
+        ebickNamelable.text = Cache.EBICK?.name
+        
+        //保险
+        if(Cache.EBICK.insurance?.insuranceList!.count>0){
+            
+            var insurance:InsuranceInfo  = Cache.EBICK.insurance!.insuranceList![0]
+            
+            
+            if(insurance.endTime != nil) {
+                
+                let myDataSource: NSString = "\(insurance.endTime!/1000)"
+                
+                var data = NSDate(timeIntervalSince1970: myDataSource.doubleValue)
+                
+                
+                if( data.compare(NSDate()) == NSComparisonResult.OrderedDescending   ){
+                    
+                    
+                    insuranceImage.hidden = false
+                    
+                }else{
+                    
+                    insuranceImage.hidden = true
+                }
+                
+                hasinsurance = true
+            }else{
+                hasinsurance = false
+                insuranceImage.hidden = true
+            }
+            
+            
+            
+        }else{
+            
+            insuranceImage.hidden = true
+            hasinsurance = false
+            
+        }
+        
+        //设备
+        if(Cache.EBICK.gpsId == nil){
+            hasDevice = false
+            if(Cache.EBICK.totalMileage>0){
+                chageViewStatus(1)
+            }else{
+                chageViewStatus(0)
+            }
+            
+        }else{
+            hasDevice = true
+            chageViewStatus(2)
+            
+        }
+        
+        refreshUI()
+        self.tableView.reloadData()
+        
+        
+        
+        
+    }
+    
+    /// status 0--未登录 1--登录里程大于0 2--登录已连接
+    var viewStatus = 0
+    
+    /**
+    改变更多页面状态
+    
+    :param: status 0--未登录/登录未连接里程等于0  1--登录未连接里程大于0  2--登录已连接
+    */
+    func chageViewStatus(status:Int){
+        
+        if(status == 0){
+            
+            todayButton.hidden = true
+            AllButton.hidden = true
+            meilView.hidden = true
+            addrLable.text = ""
+            driveTableCell.hidden = true
+            
+            hasinsurance = false
+            insuranceImage.hidden = true
+            ebickNamelable.text = "我的电动车"
+            
+            deviceImage.image = UIImage(named: "lexing_device_no")
+            deviceConnectlable.text = "购买/连接"
+            deviceConnectlable.textColor = CommonUtil.UIColorFromRGB(0x888888)
+            
+        }else if(status == 1){
+            todayButton.hidden = true
+            AllButton.hidden = true
+            meilView.hidden = false
+            
+            
+            deviceImage.image = UIImage(named: "lexing_device_no")
+            deviceConnectlable.text = "购买/连接"
+            deviceConnectlable.textColor = CommonUtil.UIColorFromRGB(0x888888)
+            
+            
+            mileTitlelable.text = "总计里程"
+            timeTitlelable.text = "行驶时间"
+            milelable.attributedText = changenum(Cache.EBICK.totalMileage)
+            timelable.attributedText = changetime(Cache.EBICK.totalMUseTime)
+            addrLable.text = ""
+            driveTableCell.hidden = false
+            
+            
+        }else if(status == 2){
+            todayButton.hidden = false
+            AllButton.hidden = false
+            meilView.hidden = false
+            
+            
+            deviceConnectlable.text = "已连接"
+            deviceImage.image = UIImage(named: "lexing_device")
+            deviceConnectlable.textColor = CommonUtil.UIColorFromRGB(0x888888)
+            
+            
+            mileTitlelable.text = "今日里程"
+            timeTitlelable.text = "行驶时间"
+            todayButton.setBackgroundImage(UIImage(named: "ebick_today_press"), forState: UIControlState.Normal)
+            AllButton.setBackgroundImage(UIImage(named: "ebick_today_normal"), forState: UIControlState.Normal)
+            todayButton.setTitleColor(CommonUtil.UIColorFromRGB(0xffffff), forState: UIControlState.Normal)
+            AllButton.setTitleColor(CommonUtil.UIColorFromRGB(0x2BCD9C), forState: UIControlState.Normal)
+            milelable.attributedText = changenum(Cache.EBICK.todayMileage)
+            timelable.attributedText = changetime(Cache.EBICK.todayMUseTime)
+            addrLable.text = CommonUtil.StringLimt(10, string: Cache.EBICK.bdAddr!)
+            driveTableCell.hidden = false
+        }
+        
+        
+        
+        
+        viewStatus = status
+        self.tableView.reloadData()
+    }
+    
+    
+    func initUI(){
+        
+        CommonUtil.setNavigationControllerBackground(self)
+        self.tableView.allowsSelection = true
+        self.tableView.scrollEnabled = true
+        
+    }
+    
+    
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        switch(indexPath.section){
+            
+        case 0:
+
+            if( indexPath.row == 0 ) {
+                
+                if(viewStatus == 1 || viewStatus == 0){
+
+                    var sb = UIStoryboard(name: "Main", bundle:nil)
+                    var vc = sb.instantiateViewControllerWithIdentifier("launchView") as! launchview
+                    vc.type = 1
+                    vc.hidesBottomBarWhenPushed = true
+                    CommonUtil.transitionWithType(kCATransitionFade, withSubType: kCATransitionFromLeft, forView: self.view.window!)
+                    self.navigationController?.pushViewController(vc, animated: false)
+                    
+                }else{
+                    
+                    var sb = UIStoryboard(name: "Main", bundle:nil)
+                    var vc = sb.instantiateViewControllerWithIdentifier("deviceinfocontroller") as!  DeviceInfoController
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    CommonUtil.getGpsInfo()
+                }
+                
+              
+            }
+            break
+        case 1:
+            
+            switch indexPath.row {
+                // 实时轨迹
+            case 0:
+                
+                var sb = UIStoryboard(name: "Main", bundle:nil)
+                var vc = sb.instantiateViewControllerWithIdentifier("mainIndexController") as!  MainIndexController
+                
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+                break;
+                
+                // 轨迹回放
+            case 1:
+                
+                
+                var sb = UIStoryboard(name: "Main", bundle:nil)
+                var vc = sb.instantiateViewControllerWithIdentifier("trackThePlaybackController") as!  TrackThePlaybackController
+                
+                vc.hidesBottomBarWhenPushed = true
+                CommonUtil.transitionWithType(kCATransitionMoveIn, withSubType: kCATransitionFromTop, forView: self.view.window!)
+                self.navigationController?.pushViewController(vc, animated: false)
+                
+                
+                
+                break;
+            default:break;
+            }
+            break
+            
+        default:
+            break
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+}

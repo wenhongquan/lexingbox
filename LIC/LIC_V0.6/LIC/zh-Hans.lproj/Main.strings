@@ -1,0 +1,657 @@
+
+/* Class = "UILabel"; text = "点击 “注册” 表示您同意乐行宝的"; ObjectID = "1eA-GO-K9F"; */
+"1eA-GO-K9F.text" = "点击 “注册” 表示您同意乐行宝的";
+
+/* Class = "UIButton"; normalTitle = "《用户协议》"; ObjectID = "39e-sp-Esn"; */
+"39e-sp-Esn.normalTitle" = "《用户协议》";
+
+/* Class = "UINavigationItem"; title = "设置乐行宝密码"; ObjectID = "3aX-J5-LaK"; */
+"3aX-J5-LaK.title" = "设置乐行宝密码";
+
+/* Class = "UILabel"; text = "(仅维修本店主营品牌)"; ObjectID = "3x9-9p-5kQ"; */
+"3x9-9p-5kQ.text" = "(仅维修本店主营品牌)";
+
+/* Class = "UILabel"; text = "出厂日期"; ObjectID = "3zl-Uv-wmS"; */
+"3zl-Uv-wmS.text" = "出厂日期";
+
+/* Class = "UILabel"; text = "长度不少于8个字符"; ObjectID = "4U2-im-ZeK"; */
+"4U2-im-ZeK.text" = "长度不少于8个字符";
+
+/* Class = "UIButton"; normalTitle = "确定"; ObjectID = "4rJ-PT-2w0"; */
+"4rJ-PT-2w0.normalTitle" = "确定";
+
+/* Class = "UILabel"; text = "业务范围"; ObjectID = "5Ps-7U-lHp"; */
+"5Ps-7U-lHp.text" = "业务范围";
+
+/* Class = "UILabel"; text = "+86 1355855"; ObjectID = "5Ug-vw-MCe"; */
+"5Ug-vw-MCe.text" = "+86 1355855";
+
+/* Class = "UILabel"; text = "修改密码"; ObjectID = "5dN-1H-uFQ"; */
+"5dN-1H-uFQ.text" = "修改密码";
+
+/* Class = "UILabel"; text = "主营品牌"; ObjectID = "69q-BS-YQ3"; */
+"69q-BS-YQ3.text" = "主营品牌";
+
+/* Class = "UIButton"; normalTitle = "立即连接"; ObjectID = "6Cx-aK-pVu"; */
+"6Cx-aK-pVu.normalTitle" = "立即连接";
+
+/* Class = "UILabel"; text = "新艺电动车专卖店"; ObjectID = "6Is-6i-hcg"; */
+"6Is-6i-hcg.text" = "新艺电动车专卖店";
+
+/* Class = "UILabel"; text = "乐行宝 1.2"; ObjectID = "6YH-qN-hc4"; */
+"6YH-qN-hc4.text" = "乐行宝 1.2";
+
+/* Class = "UINavigationItem"; title = "电动车"; ObjectID = "70f-22-0GB"; */
+"70f-22-0GB.title" = "电动车";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "8Ao-FF-Qx0"; */
+"8Ao-FF-Qx0.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "第一步：请按照上图所示，拧动钥匙开关至“开”，然后请点击【下一步】。"; ObjectID = "8FK-Vs-u82"; */
+"8FK-Vs-u82.text" = "第一步：请按照上图所示，拧动钥匙开关至“开”，然后请点击【下一步】。";
+
+/* Class = "UILabel"; text = "08:55启动"; ObjectID = "8vQ-F8-oED"; */
+"8vQ-F8-oED.text" = "08:55启动";
+
+/* Class = "UITabBarItem"; title = "消息"; ObjectID = "9DW-VZ-IKp"; */
+"9DW-VZ-IKp.title" = "消息";
+
+/* Class = "UILabel"; text = "Tommy"; ObjectID = "ALm-KC-mOZ"; */
+"ALm-KC-mOZ.text" = "Tommy";
+
+/* Class = "UILabel"; text = "退出登录"; ObjectID = "AM6-HL-HKi"; */
+"AM6-HL-HKi.text" = "退出登录";
+
+/* Class = "UIButton"; normalTitle = "联系客服"; ObjectID = "Aia-e1-70z"; */
+"Aia-e1-70z.normalTitle" = "联系客服";
+
+/* Class = "UILabel"; text = "安装完成"; ObjectID = "Apj-Z4-6sQ"; */
+"Apj-Z4-6sQ.text" = "安装完成";
+
+/* Class = "UILabel"; text = "16 ~ 29℃"; ObjectID = "Av6-cQ-acY"; */
+"Av6-cQ-acY.text" = "16 ~ 29℃";
+
+/* Class = "UILabel"; text = "检测失败"; ObjectID = "Ay0-Kx-Hy9"; */
+"Ay0-Kx-Hy9.text" = "检测失败";
+
+/* Class = "UILabel"; text = "03:57"; ObjectID = "B5Y-zM-P8W"; */
+"B5Y-zM-P8W.text" = "03:57";
+
+/* Class = "UILabel"; text = "乐行宝设备"; ObjectID = "BiP-gF-baN"; */
+"BiP-gF-baN.text" = "乐行宝设备";
+
+/* Class = "UILabel"; text = "新艺电动车专卖店"; ObjectID = "BkF-UL-QtV"; */
+"BkF-UL-QtV.text" = "新艺电动车专卖店";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "Bni-cO-PKF"; */
+"Bni-cO-PKF.normalTitle" = "完成";
+
+/* Class = "UITextField"; placeholder = "请输入乐行码"; ObjectID = "CxK-hv-T95"; */
+"CxK-hv-T95.placeholder" = "请输入乐行码";
+
+/* Class = "UILabel"; text = "欢迎您在这里向我们吐槽乐行宝的各种问题。"; ObjectID = "DEh-Gi-xWM"; */
+"DEh-Gi-xWM.text" = "欢迎您在这里向我们吐槽乐行宝的各种问题。";
+
+/* Class = "UILabel"; text = "时间"; ObjectID = "E46-kc-LeB"; */
+"E46-kc-LeB.text" = "时间";
+
+/* Class = "UITextField"; placeholder = "请输入电动车名称"; ObjectID = "EAW-k7-BM6"; */
+"EAW-k7-BM6.placeholder" = "请输入电动车名称";
+
+/* Class = "UIButton"; normalTitle = "中速"; ObjectID = "EED-dL-idc"; */
+"EED-dL-idc.normalTitle" = "中速";
+
+/* Class = "UITextField"; placeholder = "请填写手机号码"; ObjectID = "EFv-Zw-MoF"; */
+"EFv-Zw-MoF.placeholder" = "请填写手机号码";
+
+/* Class = "UILabel"; text = "街道门牌信息"; ObjectID = "EqW-pG-qV1"; */
+"EqW-pG-qV1.text" = "街道门牌信息";
+
+/* Class = "UITableViewSection"; headerTitle = "设置乐行宝密码后，你可以用乐行宝账号+乐行宝密码登录。"; ObjectID = "EvT-g6-zkz"; */
+"EvT-g6-zkz.headerTitle" = "设置乐行宝密码后，你可以用乐行宝账号+乐行宝密码登录。";
+
+/* Class = "UIButton"; normalTitle = "删除设备"; ObjectID = "EyB-oD-u82"; */
+"EyB-oD-u82.normalTitle" = "删除设备";
+
+/* Class = "UILabel"; text = "1.2km"; ObjectID = "Eye-5x-eyl"; */
+"Eye-5x-eyl.text" = "1.2km";
+
+/* Class = "UILabel"; text = "数据传输中..."; ObjectID = "GOp-6k-Ne6"; */
+"GOp-6k-Ne6.text" = "数据传输中...";
+
+/* Class = "UILabel"; text = "开关安全检测正常"; ObjectID = "GWl-5Q-Q6X"; */
+"GWl-5Q-Q6X.text" = "开关安全检测正常";
+
+/* Class = "UILabel"; text = "保险名称"; ObjectID = "GyN-eU-cU6"; */
+"GyN-eU-cU6.text" = "保险名称";
+
+/* Class = "UITextField"; placeholder = "请输入验证码"; ObjectID = "HG5-t8-dDA"; */
+"HG5-t8-dDA.placeholder" = "请输入验证码";
+
+/* Class = "UILabel"; text = "详细地址"; ObjectID = "HY9-qq-yz8"; */
+"HY9-qq-yz8.text" = "详细地址";
+
+/* Class = "UILabel"; text = "整车编码"; ObjectID = "Hlr-ge-vwS"; */
+"Hlr-ge-vwS.text" = "整车编码";
+
+/* Class = "UILabel"; text = "数据传输中..."; ObjectID = "IJT-ra-tUW"; */
+"IJT-ra-tUW.text" = "数据传输中...";
+
+/* Class = "UILabel"; text = "保单号"; ObjectID = "IUO-Qs-N0W"; */
+"IUO-Qs-N0W.text" = "保单号";
+
+/* Class = "UILabel"; text = "09:55停止"; ObjectID = "IjV-hA-OgB"; */
+"IjV-hA-OgB.text" = "09:55停止";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "Iny-bw-yPQ"; */
+"Iny-bw-yPQ.normalTitle" = "下一步";
+
+/* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "JPP-lz-FVv"; */
+"JPP-lz-FVv.placeholder" = "请输入密码";
+
+/* Class = "UILabel"; text = "距离"; ObjectID = "Ja0-R2-scb"; */
+"Ja0-R2-scb.text" = "距离";
+
+/* Class = "UILabel"; text = "13505159275"; ObjectID = "Kl9-TM-3xM"; */
+"Kl9-TM-3xM.text" = "13505159275";
+
+/* Class = "UILabel"; text = "1时28分"; ObjectID = "Kpz-Am-eXP"; */
+"Kpz-Am-eXP.text" = "1时28分";
+
+/* Class = "UILabel"; text = "颜色"; ObjectID = "LUU-bc-L2V"; */
+"LUU-bc-L2V.text" = "颜色";
+
+/* Class = "UIButton"; normalTitle = "慢速"; ObjectID = "LzD-7Y-n76"; */
+"LzD-7Y-n76.normalTitle" = "慢速";
+
+/* Class = "UILabel"; text = "品牌"; ObjectID = "MGa-Ei-D2b"; */
+"MGa-Ei-D2b.text" = "品牌";
+
+/* Class = "UILabel"; text = "安徽省"; ObjectID = "MaX-Xm-XbC"; */
+"MaX-Xm-XbC.text" = "安徽省";
+
+/* Class = "UILabel"; text = "在线"; ObjectID = "Mdh-7A-N7X"; */
+"Mdh-7A-N7X.text" = "在线";
+
+/* Class = "UILabel"; text = "为了精确判断电动车的安全状态，乐行宝设备需要实时监控您的电动车的开关操作，请点击【开始检测】按钮，检测此功能是否正常运行。"; ObjectID = "MiG-SM-tna"; */
+"MiG-SM-tna.text" = "为了精确判断电动车的安全状态，乐行宝设备需要实时监控您的电动车的开关操作，请点击【开始检测】按钮，检测此功能是否正常运行。";
+
+/* Class = "UIButton"; normalTitle = "重新检测"; ObjectID = "Mv5-xW-dts"; */
+"Mv5-xW-dts.normalTitle" = "重新检测";
+
+/* Class = "UIButton"; normalTitle = "查看原因"; ObjectID = "My8-JP-zVW"; */
+"My8-JP-zVW.normalTitle" = "查看原因";
+
+/* Class = "UINavigationItem"; title = "登录"; ObjectID = "N5T-tF-3R2"; */
+"N5T-tF-3R2.title" = "登录";
+
+/* Class = "UILabel"; text = "今日里程"; ObjectID = "NHK-NW-KCW"; */
+"NHK-NW-KCW.text" = "今日里程";
+
+/* Class = "UILabel"; text = "密码"; ObjectID = "NWE-FQ-C8a"; */
+"NWE-FQ-C8a.text" = "密码";
+
+/* Class = "UILabel"; text = "9.12M"; ObjectID = "NeS-cv-rL1"; */
+"NeS-cv-rL1.text" = "9.12M";
+
+/* Class = "UILabel"; text = "1.2km"; ObjectID = "OPq-A5-6IE"; */
+"OPq-A5-6IE.text" = "1.2km";
+
+/* Class = "UILabel"; text = "没有找到附近的商户 ~"; ObjectID = "OfL-lD-bqi"; */
+"OfL-lD-bqi.text" = "没有找到附近的商户 ~";
+
+/* Class = "UILabel"; text = "扫描乐行宝设备上的二维码"; ObjectID = "OsF-c6-RGj"; */
+"OsF-c6-RGj.text" = "扫描乐行宝设备上的二维码";
+
+/* Class = "UILabel"; text = "检测失败，您的手机无法连接到网络或设备无信号，请在回复后重新检测。"; ObjectID = "Ox8-OW-mAa"; */
+"Ox8-OW-mAa.text" = "检测失败，您的手机无法连接到网络或设备无信号，请在回复后重新检测。";
+
+/* Class = "UITextField"; placeholder = "请输入旧密码"; ObjectID = "QJW-1x-V4t"; */
+"QJW-1x-V4t.placeholder" = "请输入旧密码";
+
+/* Class = "UILabel"; text = "新艺电动车专卖店"; ObjectID = "Qto-kf-m8F"; */
+"Qto-kf-m8F.text" = "新艺电动车专卖店";
+
+/* Class = "UILabel"; text = "乐行宝设备开关监控功能异常，无法获取电动车开关状态，请联系相关销售人员重新安装或联系客服人员排除故障。"; ObjectID = "QuF-ED-jUd"; */
+"QuF-ED-jUd.text" = "乐行宝设备开关监控功能异常，无法获取电动车开关状态，请联系相关销售人员重新安装或联系客服人员排除故障。";
+
+/* Class = "UILabel"; text = "检测失败"; ObjectID = "RMI-Ab-hQ2"; */
+"RMI-Ab-hQ2.text" = "检测失败";
+
+/* Class = "UILabel"; text = "仙鹤门二号路199号"; ObjectID = "RW7-ui-fr1"; */
+"RW7-ui-fr1.text" = "仙鹤门二号路199号";
+
+/* Class = "UILabel"; text = "附近的电动车商户"; ObjectID = "RWa-Yr-76b"; */
+"RWa-Yr-76b.text" = "附近的电动车商户";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "Rh9-fy-Nan"; */
+"Rh9-fy-Nan.title" = "取消";
+
+/* Class = "UIButton"; normalTitle = "点击试试乐行码"; ObjectID = "Rsc-GB-nyD"; */
+"Rsc-GB-nyD.normalTitle" = "点击试试乐行码";
+
+/* Class = "UILabel"; text = "电动车名称"; ObjectID = "RzH-fh-i7q"; */
+"RzH-fh-i7q.text" = "电动车名称";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "S13-fz-TFk"; */
+"S13-fz-TFk.title" = "首页";
+
+/* Class = "UILabel"; text = "停留2天13小时2分"; ObjectID = "S2H-SF-EwC"; */
+"S2H-SF-EwC.text" = "停留2天13小时2分";
+
+/* Class = "UILabel"; text = "异常移动"; ObjectID = "SfS-Nt-jqH"; */
+"SfS-Nt-jqH.text" = "异常移动";
+
+/* Class = "UIButton"; normalTitle = "确认"; ObjectID = "ShE-U5-PCH"; */
+"ShE-U5-PCH.normalTitle" = "确认";
+
+/* Class = "UILabel"; text = "南京市栖霞区紫东国际创意园E4-212"; ObjectID = "SkH-GP-2af"; */
+"SkH-GP-2af.text" = "南京市栖霞区紫东国际创意园E4-212";
+
+/* Class = "UITextField"; placeholder = "请设置乐行宝密码"; ObjectID = "TJN-cl-a9W"; */
+"TJN-cl-a9W.placeholder" = "请设置乐行宝密码";
+
+/* Class = "UIButton"; normalTitle = "重新检测"; ObjectID = "TaR-e6-cf1"; */
+"TaR-e6-cf1.normalTitle" = "重新检测";
+
+/* Class = "UILabel"; text = "     0/200               "; ObjectID = "Tb4-GK-LRh"; */
+"Tb4-GK-LRh.text" = "     0/200               ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tbu-ex-dYf"; */
+"Tbu-ex-dYf.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "提交"; ObjectID = "TdX-U6-tEj"; */
+"TdX-U6-tEj.normalTitle" = "提交";
+
+/* Class = "UILabel"; text = "商户名称"; ObjectID = "TiC-VO-afR"; */
+"TiC-VO-afR.text" = "商户名称";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Tke-qf-qVG"; */
+"Tke-qf-qVG.title" = "Item";
+
+/* Class = "UILabel"; text = "起点"; ObjectID = "TzU-yZ-5gb"; */
+"TzU-yZ-5gb.text" = "起点";
+
+/* Class = "UILabel"; text = "南京"; ObjectID = "U3h-2h-TIw"; */
+"U3h-2h-TIw.text" = "南京";
+
+/* Class = "UILabel"; text = "10:12"; ObjectID = "U8Z-Sw-HP0"; */
+"U8Z-Sw-HP0.text" = "10:12";
+
+/* Class = "UILabel"; text = "异常"; ObjectID = "UmH-7H-pNa"; */
+"UmH-7H-pNa.text" = "异常";
+
+/* Class = "UIButton"; normalTitle = "删除"; ObjectID = "Umb-o4-J9q"; */
+"Umb-o4-J9q.normalTitle" = "删除";
+
+/* Class = "UILabel"; text = "SIM卡号"; ObjectID = "Uso-as-Wei"; */
+"Uso-as-Wei.text" = "SIM卡号";
+
+/* Class = "UILabel"; text = "检查轮胎表面花纹是否磨尽可提前更换有排水花纹的轮胎"; ObjectID = "Vo9-EH-sbn"; */
+"Vo9-EH-sbn.text" = "检查轮胎表面花纹是否磨尽可提前更换有排水花纹的轮胎";
+
+/* Class = "UITextField"; placeholder = "请输入手机号码"; ObjectID = "VwL-vV-WUc"; */
+"VwL-vV-WUc.placeholder" = "请输入手机号码";
+
+/* Class = "UILabel"; text = "1.2km"; ObjectID = "VwO-V5-WUe"; */
+"VwO-V5-WUe.text" = "1.2km";
+
+/* Class = "UILabel"; text = "欢迎页"; ObjectID = "Vxt-bn-TAU"; */
+"Vxt-bn-TAU.text" = "欢迎页";
+
+/* Class = "UILabel"; text = "实时位置"; ObjectID = "Wcm-jh-4S8"; */
+"Wcm-jh-4S8.text" = "实时位置";
+
+/* Class = "UILabel"; text = "南京市栖霞区仙鹤门紫东国际创意园E4 220南京市栖霞区仙鹤门紫东国际创意园E4 220南京市栖霞区仙鹤门紫东国际创意园E4 220"; ObjectID = "Wn5-sR-IJB"; */
+"Wn5-sR-IJB.text" = "南京市栖霞区仙鹤门紫东国际创意园E4 220南京市栖霞区仙鹤门紫东国际创意园E4 220南京市栖霞区仙鹤门紫东国际创意园E4 220";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "Y4S-I3-edA"; */
+"Y4S-I3-edA.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "打电话"; ObjectID = "YH2-vd-t8V"; */
+"YH2-vd-t8V.normalTitle" = "打电话";
+
+/* Class = "UILabel"; text = "尚未连接乐行宝设备"; ObjectID = "YJ5-Gm-hjZ"; */
+"YJ5-Gm-hjZ.text" = "尚未连接乐行宝设备";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "YUc-UJ-ANJ"; */
+"YUc-UJ-ANJ.title" = "返回";
+
+/* Class = "UILabel"; text = "地面湿滑，请减速慢行"; ObjectID = "YVR-Hx-WiW"; */
+"YVR-Hx-WiW.text" = "地面湿滑，请减速慢行";
+
+/* Class = "UITextField"; placeholder = "手机或固话"; ObjectID = "Yaj-YC-2Jg"; */
+"Yaj-YC-2Jg.placeholder" = "手机或固话";
+
+/* Class = "UILabel"; text = "9.12M"; ObjectID = "Yfh-LX-HDe"; */
+"Yfh-LX-HDe.text" = "9.12M";
+
+/* Class = "UITextField"; placeholder = "请输入手机号码"; ObjectID = "YxW-N9-EDx"; */
+"YxW-N9-EDx.placeholder" = "请输入手机号码";
+
+/* Class = "UILabel"; text = "9.12M"; ObjectID = "Z2t-HC-FSK"; */
+"Z2t-HC-FSK.text" = "9.12M";
+
+/* Class = "UILabel"; text = "电动车商户标注"; ObjectID = "ZOv-9D-EQW"; */
+"ZOv-9D-EQW.text" = "电动车商户标注";
+
+/* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "Zf4-DL-YGA"; */
+"Zf4-DL-YGA.normalTitle" = "获取验证码";
+
+/* Class = "UILabel"; text = "13505159275"; ObjectID = "Zh7-Ub-ZH5"; */
+"Zh7-Ub-ZH5.text" = "13505159275";
+
+/* Class = "UILabel"; text = "13505159275、15850771966"; ObjectID = "ZhZ-Dc-ogR"; */
+"ZhZ-Dc-ogR.text" = "13505159275、15850771966";
+
+/* Class = "UILabel"; text = "过期时间"; ObjectID = "a1D-lB-VsD"; */
+"a1D-lB-VsD.text" = "过期时间";
+
+/* Class = "UINavigationItem"; title = "填写验证码"; ObjectID = "a8W-he-3QX"; */
+"a8W-he-3QX.title" = "填写验证码";
+
+/* Class = "UILabel"; text = "今日没有行驶轨迹"; ObjectID = "aZd-yh-axn"; */
+"aZd-yh-axn.text" = "今日没有行驶轨迹";
+
+/* Class = "UILabel"; text = "提示音"; ObjectID = "b82-LM-OvR"; */
+"b82-LM-OvR.text" = "提示音";
+
+/* Class = "UILabel"; text = "长度不少于8个字符"; ObjectID = "baf-z0-UYX"; */
+"baf-z0-UYX.text" = "长度不少于8个字符";
+
+/* Class = "UILabel"; text = "电机号码"; ObjectID = "beC-aI-qb8"; */
+"beC-aI-qb8.text" = "电机号码";
+
+/* Class = "UILabel"; text = "我的电动车可能被盗"; ObjectID = "bxK-HJ-XUF"; */
+"bxK-HJ-XUF.text" = "我的电动车可能被盗";
+
+/* Class = "UILabel"; text = "接收短信大约需要 60 秒"; ObjectID = "cU3-Gi-jOZ"; */
+"cU3-Gi-jOZ.text" = "接收短信大约需要 60 秒";
+
+/* Class = "UILabel"; text = "成功"; ObjectID = "dD3-gu-udV"; */
+"dD3-gu-udV.text" = "成功";
+
+/* Class = "UILabel"; text = "振动"; ObjectID = "dDR-gi-ZMN"; */
+"dDR-gi-ZMN.text" = "振动";
+
+/* Class = "UINavigationItem"; title = "消息"; ObjectID = "dIx-SJ-M6d"; */
+"dIx-SJ-M6d.title" = "消息";
+
+/* Class = "UILabel"; text = "徐庄软件园"; ObjectID = "dOy-kk-v3E"; */
+"dOy-kk-v3E.text" = "徐庄软件园";
+
+/* Class = "UILabel"; text = "南京市栖霞区紫东国际创意园E4-212"; ObjectID = "dQC-S2-dGH"; */
+"dQC-S2-dGH.text" = "南京市栖霞区紫东国际创意园E4-212";
+
+/* Class = "UILabel"; text = "安装完成"; ObjectID = "dR6-DU-vDW"; */
+"dR6-DU-vDW.text" = "安装完成";
+
+/* Class = "UITextField"; placeholder = "请再次填入"; ObjectID = "de0-EK-eff"; */
+"de0-EK-eff.placeholder" = "请再次填入";
+
+/* Class = "UILabel"; text = "伴随效果"; ObjectID = "diz-cR-4gq"; */
+"diz-cR-4gq.text" = "伴随效果";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "dxj-3r-rhF"; */
+"dxj-3r-rhF.normalTitle" = "1";
+
+/* Class = "UILabel"; text = "报警时位置"; ObjectID = "dzy-jh-QqT"; */
+"dzy-jh-QqT.text" = "报警时位置";
+
+/* Class = "UILabel"; text = "13505159275"; ObjectID = "e01-fA-COx"; */
+"e01-fA-COx.text" = "13505159275";
+
+/* Class = "UILabel"; text = "新艺电动车专卖店"; ObjectID = "e3p-OD-5pc"; */
+"e3p-OD-5pc.text" = "新艺电动车专卖店";
+
+/* Class = "UILabel"; text = "我的账号"; ObjectID = "eY0-6b-9Bn"; */
+"eY0-6b-9Bn.text" = "我的账号";
+
+/* Class = "UILabel"; text = "乐行码"; ObjectID = "eZu-VT-3UZ"; */
+"eZu-VT-3UZ.text" = "乐行码";
+
+/* Class = "UILabel"; text = "156458746"; ObjectID = "ec8-ta-Dxk"; */
+"ec8-ta-Dxk.text" = "156458746";
+
+/* Class = "UITabBarItem"; title = "更多"; ObjectID = "eli-Fu-7Ho"; */
+"eli-Fu-7Ho.title" = "更多";
+
+/* Class = "UILabel"; text = "公里"; ObjectID = "enX-pt-r6Q"; */
+"enX-pt-r6Q.text" = "公里";
+
+/* Class = "UILabel"; text = "14/08/17 01:14"; ObjectID = "fBP-eK-eQo"; */
+"fBP-eK-eQo.text" = "14/08/17 01:14";
+
+/* Class = "UIButton"; normalTitle = "地区信息"; ObjectID = "fFC-fx-mmN"; */
+"fFC-fx-mmN.normalTitle" = "地区信息";
+
+/* Class = "UILabel"; text = "我的电动车可能被盗"; ObjectID = "fYg-iO-cfx"; */
+"fYg-iO-cfx.text" = "我的电动车可能被盗";
+
+/* Class = "UITextField"; placeholder = "请输入新密码"; ObjectID = "fdO-pr-lkd"; */
+"fdO-pr-lkd.placeholder" = "请输入新密码";
+
+/* Class = "UILabel"; text = "电动车名称"; ObjectID = "fn0-8p-LsO"; */
+"fn0-8p-LsO.text" = "电动车名称";
+
+/* Class = "UILabel"; text = "02:26"; ObjectID = "gKU-Nc-RU7"; */
+"gKU-Nc-RU7.text" = "02:26";
+
+/* Class = "UILabel"; text = "南京"; ObjectID = "goZ-D4-zpm"; */
+"goZ-D4-zpm.text" = "南京";
+
+/* Class = "UILabel"; text = "异常移动"; ObjectID = "guN-dA-8jQ"; */
+"guN-dA-8jQ.text" = "异常移动";
+
+/* Class = "UILabel"; text = "距离"; ObjectID = "gzJ-L6-b6x"; */
+"gzJ-L6-b6x.text" = "距离";
+
+/* Class = "UILabel"; text = "我的豪华电动车"; ObjectID = "iC1-Eq-R6I"; */
+"iC1-Eq-R6I.text" = "我的豪华电动车";
+
+/* Class = "UILabel"; text = "选择地区"; ObjectID = "jAU-cn-z77"; */
+"jAU-cn-z77.text" = "选择地区";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "jTk-WM-hCJ"; */
+"jTk-WM-hCJ.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "到这里"; ObjectID = "jVT-qC-oqs"; */
+"jVT-qC-oqs.normalTitle" = "到这里";
+
+/* Class = "UILabel"; text = "  Copyright © 2014-2015 Lexing.All rights reserved."; ObjectID = "jZb-9Q-JmS"; */
+"jZb-9Q-JmS.text" = "  Copyright © 2014-2015 Lexing.All rights reserved.";
+
+/* Class = "UILabel"; text = "小雨"; ObjectID = "jxP-pZ-fGY"; */
+"jxP-pZ-fGY.text" = "小雨";
+
+/* Class = "UILabel"; text = "离线地图"; ObjectID = "k77-3b-QeT"; */
+"k77-3b-QeT.text" = "离线地图";
+
+/* Class = "UIButton"; normalTitle = "总计"; ObjectID = "kXq-RM-OnS"; */
+"kXq-RM-OnS.normalTitle" = "总计";
+
+/* Class = "UITextField"; placeholder = "门牌名字"; ObjectID = "kZe-dj-mQ4"; */
+"kZe-dj-mQ4.placeholder" = "门牌名字";
+
+/* Class = "UILabel"; text = "雨天电动车出行小常识"; ObjectID = "kaK-Hd-vxV"; */
+"kaK-Hd-vxV.text" = "雨天电动车出行小常识";
+
+/* Class = "UINavigationItem"; title = "注册"; ObjectID = "kft-at-lsN"; */
+"kft-at-lsN.title" = "注册";
+
+/* Class = "UILabel"; text = "18:37"; ObjectID = "kvi-uy-OtV"; */
+"kvi-uy-OtV.text" = "18:37";
+
+/* Class = "UIBarButtonItem"; title = "完成"; ObjectID = "lAV-MK-Z9p"; */
+"lAV-MK-Z9p.title" = "完成";
+
+/* Class = "UILabel"; text = "18:37"; ObjectID = "lJt-ei-5nA"; */
+"lJt-ei-5nA.text" = "18:37";
+
+/* Class = "UILabel"; text = "南京"; ObjectID = "lMp-ap-rve"; */
+"lMp-ap-rve.text" = "南京";
+
+/* Class = "UITextField"; placeholder = "请输入验证码"; ObjectID = "lRY-wt-chG"; */
+"lRY-wt-chG.placeholder" = "请输入验证码";
+
+/* Class = "UILabel"; text = "下载离线地图可以提升浏览速度，并为您节省90%以上的流量。"; ObjectID = "lSb-ce-Jsq"; */
+"lSb-ce-Jsq.text" = "下载离线地图可以提升浏览速度，并为您节省90%以上的流量。";
+
+/* Class = "UIButton"; normalTitle = "栖霞区仙鹤门地铁站2号..."; ObjectID = "lcp-fW-nz7"; */
+"lcp-fW-nz7.normalTitle" = "栖霞区仙鹤门地铁站2号...";
+
+/* Class = "UIButton"; normalTitle = "忘记密码？"; ObjectID = "m1Q-kh-yke"; */
+"m1Q-kh-yke.normalTitle" = "忘记密码？";
+
+/* Class = "UILabel"; text = "实时位置"; ObjectID = "mjZ-8D-tJX"; */
+"mjZ-8D-tJX.text" = "实时位置";
+
+/* Class = "UILabel"; text = "行驶时间"; ObjectID = "mtV-Ub-kKj"; */
+"mtV-Ub-kKj.text" = "行驶时间";
+
+/* Class = "UILabel"; text = "18:37"; ObjectID = "mz5-I3-XSY"; */
+"mz5-I3-XSY.text" = "18:37";
+
+/* Class = "UILabel"; text = "第二步：请按照上图所示，再次拧动钥匙开关至“关”，然后请点击【下一步】。"; ObjectID = "n7q-WL-lzL"; */
+"n7q-WL-lzL.text" = "第二步：请按照上图所示，再次拧动钥匙开关至“关”，然后请点击【下一步】。";
+
+/* Class = "UILabel"; text = "确认密码"; ObjectID = "nWb-2l-GoU"; */
+"nWb-2l-GoU.text" = "确认密码";
+
+/* Class = "UIButton"; normalTitle = "今日"; ObjectID = "o8K-0B-VmV"; */
+"o8K-0B-VmV.normalTitle" = "今日";
+
+/* Class = "UILabel"; text = "我要标注"; ObjectID = "omE-WT-MBL"; */
+"omE-WT-MBL.text" = "我要标注";
+
+/* Class = "UILabel"; text = "乐行宝设备失去信号连接"; ObjectID = "omY-YN-wh0"; */
+"omY-YN-wh0.text" = "乐行宝设备失去信号连接";
+
+/* Class = "UILabel"; text = "中途停车"; ObjectID = "pD2-f1-hbr"; */
+"pD2-f1-hbr.text" = "中途停车";
+
+/* Class = "UILabel"; text = "型号"; ObjectID = "pHT-sM-xKj"; */
+"pHT-sM-xKj.text" = "型号";
+
+/* Class = "UILabel"; text = "行驶记录"; ObjectID = "ppe-WT-PSq"; */
+"ppe-WT-PSq.text" = "行驶记录";
+
+/* Class = "UIButton"; disabledTitle = "注册"; ObjectID = "qFL-c1-ZQk"; */
+"qFL-c1-ZQk.disabledTitle" = "注册";
+
+/* Class = "UIButton"; highlightedTitle = "注册"; ObjectID = "qFL-c1-ZQk"; */
+"qFL-c1-ZQk.highlightedTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "qFL-c1-ZQk"; */
+"qFL-c1-ZQk.normalTitle" = "注册";
+
+/* Class = "UIButton"; selectedTitle = "注册"; ObjectID = "qFL-c1-ZQk"; */
+"qFL-c1-ZQk.selectedTitle" = "注册";
+
+/* Class = "UILabel"; text = "吐槽产品经理"; ObjectID = "qGg-1H-kr7"; */
+"qGg-1H-kr7.text" = "吐槽产品经理";
+
+/* Class = "UILabel"; text = "仙鹤门二号路199号"; ObjectID = "qGs-aN-FT6"; */
+"qGs-aN-FT6.text" = "仙鹤门二号路199号";
+
+/* Class = "UIButton"; normalTitle = "快速"; ObjectID = "qfU-2f-Pni"; */
+"qfU-2f-Pni.normalTitle" = "快速";
+
+/* Class = "UILabel"; text = "开关安全检测"; ObjectID = "r3T-Cf-z2I"; */
+"r3T-Cf-z2I.text" = "开关安全检测";
+
+/* Class = "UIButton"; normalTitle = "今日"; ObjectID = "r9B-Mh-2Rd"; */
+"r9B-Mh-2Rd.normalTitle" = "今日";
+
+/* Class = "UILabel"; text = "危险指数："; ObjectID = "sHh-dl-GSr"; */
+"sHh-dl-GSr.text" = "危险指数：";
+
+/* Class = "UILabel"; text = "关于乐行宝"; ObjectID = "sPq-AU-p0q"; */
+"sPq-AU-p0q.text" = "关于乐行宝";
+
+/* Class = "UILabel"; text = "乐行宝账号"; ObjectID = "saR-aB-7BZ"; */
+"saR-aB-7BZ.text" = "乐行宝账号";
+
+/* Class = "UILabel"; text = "详细信息"; ObjectID = "sq0-yy-NAD"; */
+"sq0-yy-NAD.text" = "详细信息";
+
+/* Class = "UIButton"; normalTitle = "开始检测"; ObjectID = "sra-UL-9py"; */
+"sra-UL-9py.normalTitle" = "开始检测";
+
+/* Class = "UILabel"; text = "已连接"; ObjectID = "syX-Lk-Df6"; */
+"syX-Lk-Df6.text" = "已连接";
+
+/* Class = "UILabel"; text = "设备状态"; ObjectID = "t1E-UH-Z66"; */
+"t1E-UH-Z66.text" = "设备状态";
+
+/* Class = "UILabel"; text = "（一般）"; ObjectID = "tYt-Ia-B2W"; */
+"tYt-Ia-B2W.text" = "（一般）";
+
+/* Class = "UILabel"; text = "1.2km"; ObjectID = "uxx-vD-0Ti"; */
+"uxx-vD-0Ti.text" = "1.2km";
+
+/* Class = "UILabel"; text = "请放心使用"; ObjectID = "v8W-gh-QPg"; */
+"v8W-gh-QPg.text" = "请放心使用";
+
+/* Class = "UIButton"; normalTitle = "回放所有轨迹"; ObjectID = "vGI-wY-sgT"; */
+"vGI-wY-sgT.normalTitle" = "回放所有轨迹";
+
+/* Class = "UITextField"; text = "+86"; ObjectID = "vHF-Tk-dy1"; */
+"vHF-Tk-dy1.text" = "+86";
+
+/* Class = "UILabel"; text = "二维码无法识别？"; ObjectID = "vdq-AA-SwL"; */
+"vdq-AA-SwL.text" = "二维码无法识别？";
+
+/* Class = "UILabel"; text = "南京市栖霞区灵山北路"; ObjectID = "vfT-aI-XXB"; */
+"vfT-aI-XXB.text" = "南京市栖霞区灵山北路";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "vgK-zj-mtK"; */
+"vgK-zj-mtK.title" = "设置";
+
+/* Class = "UILabel"; text = "我的豪华电动车"; ObjectID = "wE7-Jz-Pd0"; */
+"wE7-Jz-Pd0.text" = "我的豪华电动车";
+
+/* Class = "UILabel"; text = "暂无消息~"; ObjectID = "wEY-3p-3IL"; */
+"wEY-3p-3IL.text" = "暂无消息~";
+
+/* Class = "UILabel"; text = "南京乐行天下智能科技有限公司 版权所有"; ObjectID = "wXr-qz-glM"; */
+"wXr-qz-glM.text" = "南京乐行天下智能科技有限公司 版权所有";
+
+/* Class = "UILabel"; text = "联系电话"; ObjectID = "wbX-fn-KtT"; */
+"wbX-fn-KtT.text" = "联系电话";
+
+/* Class = "UILabel"; text = "10:12"; ObjectID = "xJS-54-tK9"; */
+"xJS-54-tK9.text" = "10:12";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "yBG-Ty-WLi"; */
+"yBG-Ty-WLi.title" = "取消";
+
+/* Class = "UITextField"; placeholder = "请输入新密码"; ObjectID = "ybx-7O-Cj7"; */
+"ybx-7O-Cj7.placeholder" = "请输入新密码";
+
+/* Class = "UITabBarItem"; title = "电动车"; ObjectID = "ynu-fj-htc"; */
+"ynu-fj-htc.title" = "电动车";
+
+/* Class = "UILabel"; text = "仙鹤门二号路199号"; ObjectID = "yuF-vZ-PWG"; */
+"yuF-vZ-PWG.text" = "仙鹤门二号路199号";
+
+/* Class = "UILabel"; text = "生效时间"; ObjectID = "yzn-ni-7Ou"; */
+"yzn-ni-7Ou.text" = "生效时间";
+
+/* Class = "UILabel"; text = "我的豪华电动车"; ObjectID = "zHa-mZ-uxF"; */
+"zHa-mZ-uxF.text" = "我的豪华电动车";
+
+/* Class = "UILabel"; text = "正在检测中，请稍后..."; ObjectID = "zNn-or-xXN"; */
+"zNn-or-xXN.text" = "正在检测中，请稍后...";
+
+/* Class = "UILabel"; text = "常见问题"; ObjectID = "zVX-nm-xdK"; */
+"zVX-nm-xdK.text" = "常见问题";
+
+/* Class = "UILabel"; text = "安装完成"; ObjectID = "zcD-1R-Wob"; */
+"zcD-1R-Wob.text" = "安装完成";
+
+/* Class = "UIButton"; normalTitle = "服务条款"; ObjectID = "zfB-rM-oOE"; */
+"zfB-rM-oOE.normalTitle" = "服务条款";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "zyM-Wj-o0V"; */
+"zyM-Wj-o0V.normalTitle" = "下一步";

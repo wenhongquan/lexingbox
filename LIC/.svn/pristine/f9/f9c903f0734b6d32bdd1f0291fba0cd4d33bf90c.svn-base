@@ -1,0 +1,760 @@
+//
+//  GpsService.swift
+//  LIC
+//
+//  Created by 温红权 on 15/3/14.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+import Foundation
+
+private let sharedInstance = GpsService()
+
+class GpsService:BaseService {
+    
+    class var sharedGpsService : GpsService {
+        return sharedInstance
+    }
+    
+    /**
+    获取电动车信息
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: userId         用户编号
+    */
+    func GetEbickInfo(successHandler:SERVICEHANDLER?,errorHandler:SERVICEHANDLER?,userId:String?)->Void{
+       
+        if(userId == nil) {
+             NSNotificationCenter.defaultCenter().postNotificationName("getebickinfo", object: nil)
+          return
+        }
+        
+        
+        var url = getUrl(StatusCode.URL.EBIKE_USER_ID)
+        url = url.stringByReplacingOccurrencesOfString("{userId}", withString: userId!, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler?(data: body);
+                return
+            }else{
+                
+                
+                if(body["status"].int == StatusCode.SystemSC.SYSTEM_OK){
+                    
+                    Cache.EBICK = Mapper<Ebick>().map(body["data"][0].dictionaryObject!)
+                    
+                   
+                    
+                    
+                }
+                 NSNotificationCenter.defaultCenter().postNotificationName("getebickinfo", object: nil)
+     
+                
+                
+                successHandler?(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    
+    
+    /**
+    获取电动车实时轨迹
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: userId         用户编号
+    :param: ebickId        电动车编号
+    */
+    func GetEbickRealtimeTrajectory(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,userId:Int,ebickId:Int)->Void{
+        
+
+        
+        var url = getUrl(StatusCode.URL.F_TRAJECTORY_REALTIME_EBIKEID_VERSION)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: userId.description, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: ebickId.description, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    /**
+    获取电动车报警轨迹
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: userId         用户编号
+    :param: ebickId        电动车编号
+    */
+    func GetEbickEventTrajectory(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,eventId:Double,ebickId:Double,userId:Double){
+    
+        var url = getUrl(StatusCode.URL.F_TRAJECTORY_EVENT_EBIKEID_EVENTID)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: String(format:"%.0f", userId), options: nil, range: nil)
+        
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: String(format:"%.0f", ebickId), options: nil, range: nil)
+        
+        url = url.stringByReplacingOccurrencesOfString("{2}", withString: String(format:"%.0f", eventId), options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+
+    
+    }
+    
+    
+    /**
+    获取GPS信息
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: gpsId          GPSId
+    */
+    func GetGPSInfo(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,gpsId:Int){
+        
+        var url = getUrl(StatusCode.URL.F_GPS_ID)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: gpsId.description, options: nil, range: nil)
+      
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    /**
+    修改电动车名称
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           电动车信息{"id": 1, "userId":1}
+    */
+    func PutEbick(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,body:[String:AnyObject]){
+        
+        var url = getUrl(StatusCode.URL.EBIKE)
+        
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: body){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    /**
+    解除连接
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           电动车信息{"id": 1, "userId":1}
+    */
+    func PutEbickUNCONN(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,ebicId:Int){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_UNCONN)
+         url = url.stringByReplacingOccurrencesOfString("{0}", withString: ebicId.description, options: nil, range: nil)
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: nil){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+
+    
+    
+    
+    /**
+    扫码连接设备
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           电动车信息 {"qrCode":"33fce746d8a84a10838658f46e0197c5",
+    "userId":10,
+    "ebikeId":25}
+    */
+    func PutEbickCONN(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,body:[String:AnyObject]){
+        
+        var url = getUrl(StatusCode.URL.GPS_QRCODE)
+  
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: body){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+
+    
+    
+    /**
+    乐行码连接设备
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: body           电动车信息 {"lexingCode":"33fce746d8a84a10838658f46e0197c5",
+    "userId":10,
+    "ebikeId":25}
+    */
+    func PutEbickLexingCodeCONN(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,body:[String:AnyObject]){
+        
+        var url = getUrl(StatusCode.URL.F_BIND_GPS_LEXING_CODE)
+        
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: body){(body:JSON,error:String) in
+            
+            if( error != ""){
+            
+            errorHandler(data: body);
+            return
+        }else{
+                
+            successHandler(data: body);
+            return
+            
+            }
+        
+        }
+    
+    }
+
+    
+    /**
+    根据报警类型删除所有报警
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: userId         用户id
+    :param: category       报警类型
+    */
+    func DELETEEbickEVENTByTAPE(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,userId:Int,category:Int){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_DELETE_EVENT_CATEGORY)
+        
+         url = url.stringByReplacingOccurrencesOfString("{0}", withString: userId.description, options: nil, range: nil)
+         url = url.stringByReplacingOccurrencesOfString("{1}", withString: category.description, options: nil, range: nil)
+        
+        HttpUtil.DoDelete(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+
+    
+    /**
+    根据报警类型标为所有报警
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: userId         用户id
+    :param: category       报警类型
+    */
+    func ReadEbickEVENTByTAPE(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,userId:Int,category:Int){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_READ_EVENT_CATEGORY)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: userId.description, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: category.description, options: nil, range: nil)
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body:nil){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+
+    
+    /**
+    获取轨迹状态
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: year           时间
+    :param: ebickId        电动车编号
+    */
+    func GetEbickTranceStatus(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,year:String,ebickId:String){
+        
+        var url = getUrl(StatusCode.URL.F_TRAJECTORY_RECORD_STATUS)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: ebickId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: year, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+
+    
+    
+    /**
+    根据时间获取行驶记录
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: startTime      开始时间
+    :param: stopTime       结束时间
+    :param: ebickId        电动车编号
+    */
+    func GetEbickTranceRecords(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,startTime:String,endTime:String,ebickId:String){
+        
+        var url = getUrl(StatusCode.URL.F_TRAJECTORY_RECORD)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: ebickId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: startTime, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{2}", withString: endTime, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+
+    
+    /**
+    根据时间获取历史轨迹
+    
+    :param: successHandler 成功处理
+    :param: successHandler 成功处理
+    :param: startTime      开始时间
+    :param: stopTime       结束时间
+    :param: ebickId        电动车编号
+    */
+    func GetEbickTranceHistoryRecords(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,startTime:String,endTime:String,ebickId:String){
+        
+        var url = getUrl(StatusCode.URL.F_TRAJECTORY_POINT)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: ebickId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: startTime, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{2}", withString: endTime, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+    
+    /**
+    根据位置获取修车铺列表  (用户经纬)
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: latitude       经度
+    :param: longitude      纬度
+    :param: paged          页码
+    */
+    func GetEbickBusiness(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,latitude:String,longitude:String,paged:String,brand:Int?,businessScope:Int?,lxbDeviceSellFlag:Int?){
+        
+        
+        var url = getUrl(StatusCode.URL.F_BUSINESSES)
+        
+        url += "&longitude="+longitude+"&latitude="+latitude+"&sort=1&in_coord_type=2&source=1&pageSize=10&paged="+paged
+        
+        if( businessScope != nil){
+            
+          url += "&businessScope="+businessScope!.description
+        
+        }
+        if( brand != nil){
+            
+            url += "&brand="+brand!.description
+            
+        }
+        
+        if(lxbDeviceSellFlag != nil){
+            
+              url += "&lxbDeviceSellFlag="+lxbDeviceSellFlag!.description
+        }
+
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+//                println(body)
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+    
+    /**
+    根据位置获取修车铺数量  (用户所在城市)
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: city           城市名称
+    */
+    func GetEbickBusinessCountBycityName(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,city:String){
+        
+        
+        var url = getUrl(StatusCode.URL.BUSINESSESCOUNT)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: city, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+    }
+
+    
+    /**
+    Acc开始结束
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: gpsId          设备编号
+    :param: status         设备开关
+    */
+    func SetGPSACC(gpsId:Int,status:Int){
+        
+        
+        var url = getUrl(StatusCode.URL.F_GPS_ACC)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: gpsId.description, options: nil, range: nil)
+        
+         url = url.stringByReplacingOccurrencesOfString("{1}", withString: status.description, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            
+        }
+        
+    }
+    
+    /**
+    获取电动车品牌
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    */
+    func GetEbickBrand(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER){
+        var url = getUrl(StatusCode.URL.EBICK_BRAND)
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            if( error != ""){
+                errorHandler(data: body);
+                return
+            }else{
+                successHandler(data: body);
+                return
+            }
+        }
+    }
+   
+    
+    /**
+    添加商铺
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           内容
+    */
+    func ADDEbickBrand(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,body:[String:AnyObject]){
+
+        var url = getUrl(StatusCode.URL.EBICK_ADD)
+        
+        
+        HttpUtil.DoPOST(url, lexingkey: getLexingKey(),body: body){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    /**
+    修改商铺
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           内容
+    */
+    func UpdateEbickBrand(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,body:[String:AnyObject]){
+        
+        var url = getUrl(StatusCode.URL.EBICK_ADD)
+        
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: body){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    
+    /**
+    获取广告
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: body           内容
+    */
+    func GetEbickAdvert(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER){
+        
+        var url = getUrl(StatusCode.URL.EBICK_ADVERT)
+        
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+
+
+    /**
+    获取我标注的商户
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: type           审核类型 1.未审核 2.通过 3.拒绝;
+    :param: paged          当前页码
+    */
+    func GetEbickBrandByMine(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,type:Int?,paged:String){
+
+
+        var url = getUrl(StatusCode.URL.MINE_EBICK_BANDER_ADD)
+
+        if type != nil {
+       
+            url =  url + "&pageSize=10&paged=" + paged + "&auditStatus=" + type!.description
+        
+        }else{
+            //加载全部
+            url =  url + "&pageSize=10&paged=" + paged
+        }
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+
+    
+    /**
+    删除我标注的商户
+    
+    :param: successHandler 成功处理
+    :param: errorHandler   错误处理
+    :param: type           审核类型 1.未审核 2.通过 3.拒绝;
+    :param: paged          当前页码
+    */
+    func DeleteEbickBrandByMine(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,businessId:Int){
+        
+        
+        var url = getUrl(StatusCode.URL.MINE_EBICK_BANDER_DELETE)
+        
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: businessId.description, options: nil, range: nil)
+        
+        HttpUtil.DoDelete(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    
+    
+    
+
+
+
+}

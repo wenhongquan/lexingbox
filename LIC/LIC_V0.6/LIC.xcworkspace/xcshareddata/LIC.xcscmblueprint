@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "caaed83b-81b1-5141-836a-d4720ad32d28++7423",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "caaed83b-81b1-5141-836a-d4720ad32d28++7423" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "caaed83b-81b1-5141-836a-d4720ad32d28++7423" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "42844060-1AA5-4088-8F05-2BCE25222C45",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "caaed83b-81b1-5141-836a-d4720ad32d28++7423" : "LIC"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LIC",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LIC_V0.6\/LIC.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.199.188\/LEXING",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "caaed83b-81b1-5141-836a-d4720ad32d28++7423"
+    }
+  ]
+}

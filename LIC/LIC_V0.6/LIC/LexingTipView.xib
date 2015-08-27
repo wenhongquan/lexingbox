@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="PAL-bR-Whf">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaQ-IF-LDQ">
+                    <rect key="frame" x="10" y="292" width="14" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_lexing.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJa-pW-jqR">
+                    <rect key="frame" x="26" y="293" width="35" height="14"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="vWr-hQ-1gm"/>
+                        <constraint firstAttribute="width" constant="35" id="x8x-ri-MaV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标志的为乐行宝指定销售商户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nta-pJ-z6F">
+                    <rect key="frame" x="63" y="292" width="182" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="IJa-pW-jqR" secondAttribute="centerY" id="Asm-lm-KkP"/>
+                <constraint firstAttribute="centerY" secondItem="nta-pJ-z6F" secondAttribute="centerY" id="D1m-Jr-RIF"/>
+                <constraint firstAttribute="centerY" secondItem="EaQ-IF-LDQ" secondAttribute="centerY" id="MJb-iK-2fv"/>
+                <constraint firstItem="EaQ-IF-LDQ" firstAttribute="leading" secondItem="PAL-bR-Whf" secondAttribute="leading" constant="10" id="Nw2-hZ-SoH"/>
+                <constraint firstItem="IJa-pW-jqR" firstAttribute="leading" secondItem="EaQ-IF-LDQ" secondAttribute="trailing" constant="2" id="vFG-Ym-cvs"/>
+                <constraint firstItem="nta-pJ-z6F" firstAttribute="leading" secondItem="IJa-pW-jqR" secondAttribute="trailing" constant="2" id="yZv-fX-zs5"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_lexing.png" width="34" height="14"/>
+    </resources>
+</document>

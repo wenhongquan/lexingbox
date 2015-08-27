@@ -1,0 +1,328 @@
+//
+//  EventService.swift
+//  LIC
+//
+//  Created by 温红权 on 15/4/7.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+import Foundation
+
+private let sharedInstance = EventService()
+
+class EventService:BaseService{
+    
+    class var sharedEventService : EventService {
+        return sharedInstance
+    }
+    
+   /**
+    获取用户报警信息统计
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: userId         用户编号
+    */
+    func GetEventCountByUserId(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER){
+        
+        var url = getUrl(StatusCode.URL.F_ALL_EBIKE_EVENT_COUNT)
+
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    /**
+    获取用户报警信息
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: userId         用户编号
+    :param: paged          页码
+    :param: pagesize       单页个数
+    */
+    func GetEventsByUserId(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,category:String,ebickId:String,paged:String,pagesize:String){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_EVENT_CATEGORY)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: ebickId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: category, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{2}", withString: paged, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{3}", withString: pagesize, options: nil, range: nil)
+     
+        
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey() ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    
+    /**
+    读取报警
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: userId         用户编号
+    :param: eventId        消息编号
+    */
+
+    func ReadEventByUserId(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,userId:String,eventId:String){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_EVENT_READ)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: userId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: eventId, options: nil, range: nil)
+       
+
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body: nil ){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    /**
+    删除报警
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: userId         用户编号
+    :param: eventId        消息编号
+    */
+    
+    func DeleteEventByUserId(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,userId:String,eventId:String){
+        
+        var url = getUrl(StatusCode.URL.F_EBIKE_EVENT_ID)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: userId, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: eventId, options: nil, range: nil)
+        
+        
+        HttpUtil.DoDelete(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+
+    
+    
+    /**
+    获取最新消息统计
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: ebickId        电动车编号
+    */
+    func GetMsgCount(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,ebickId:Int?){
+        
+        var url = getUrl(StatusCode.URL.MSG_COUNT)
+        if(ebickId != nil){
+          url = url + "?ebikeId=" + ebickId!.description
+        }
+        
+      
+
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    /**
+    获取某类消息
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: type           消息类型
+    :param: paged          页码
+    :param: pagesize       单页数量
+    
+    */
+    func GetMsgsByType(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,type:Int,paged:Int,pagesize:Int){
+        
+        var url = getUrl(StatusCode.URL.MSG_GET_BY_TYPE)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: type.description, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: paged.description, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{2}", withString: pagesize.description, options: nil, range: nil)
+        
+        HttpUtil.DoGet(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+    }
+    
+    
+    /**
+    阅读某类消息
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: type           消息类型
+    
+    */
+    func ReadMsgsByType(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,type:Int){
+        
+        var url = getUrl(StatusCode.URL.MSG_READ)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: type.description, options: nil, range: nil)
+        
+        HttpUtil.DoPUT(url, lexingkey: getLexingKey(),body:nil){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    /**
+    删除某类消息
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: type           消息类型
+    
+    */
+    func RemoveMsgsByType(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,type:Int){
+        
+        var url = getUrl(StatusCode.URL.MSG_DELETE_BY_TYPE)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: type.description, options: nil, range: nil)
+        
+        HttpUtil.DoDelete(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    /**
+    删除某条消息
+    
+    :param: successHandler 成功后的处理函数
+    :param: errorHandler   失败后处理函数
+    :param: type           消息类型
+    :param: id             消息编号
+    
+    */
+    func RemoveMsgsById(successHandler:SERVICEHANDLER,errorHandler:SERVICEHANDLER,type:Int,id:Int){
+        
+        var url = getUrl(StatusCode.URL.MSG_DELETE)
+        url = url.stringByReplacingOccurrencesOfString("{0}", withString: type.description, options: nil, range: nil)
+        url = url.stringByReplacingOccurrencesOfString("{1}", withString: id.description, options: nil, range: nil)
+        
+        HttpUtil.DoDelete(url, lexingkey: getLexingKey()){(body:JSON,error:String) in
+            
+            if( error != ""){
+                
+                errorHandler(data: body);
+                return
+            }else{
+                
+                successHandler(data: body);
+                return
+                
+            }
+            
+        }
+        
+        
+    }
+
+
+
+    
+    
+    
+    
+    
+    
+    
+}
+

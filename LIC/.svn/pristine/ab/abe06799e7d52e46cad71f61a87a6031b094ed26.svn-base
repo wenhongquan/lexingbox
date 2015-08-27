@@ -1,0 +1,180 @@
+//
+//  launchview.swift
+//  SwiftPod
+//
+//  Created by 温红权 on 15/2/21.
+//  Copyright (c) 2015年 温红权. All rights reserved.
+//
+
+import UIKit
+
+
+class launchview: BaseController {
+    
+    var type = 0
+    
+    
+    var image1 = UIImage(named: "item1")
+    var image2 = UIImage(named: "item2")
+    var image3 = UIImage(named: "item3")
+    
+    var image1Old = UIImage(named: "item1_Old")
+    var image2Old = UIImage(named: "item2_Old")
+    var image3Old = UIImage(named: "item3_Old")
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var item1 = RMParallaxItem(image: image1!, text: "骑车出门再无烦心事",text1: "维修、改装、充电",text2:"服务就在你身边")
+        var item2 = RMParallaxItem(image: image2!, text: "和小偷说再见",text1: "实时监控、危险报警、轨迹追踪",text2:"你丢车，我来赔")
+        var item3 = RMParallaxItem(image: image3!, text: "记录出行点点滴滴",text1: "轨迹回放、里程统计、行驶记录",text2:"收藏途中的美好")
+        
+        var rmParallaxViewController = RMParallax(items: [item1, item2, item3], motion: true)
+        
+        
+        
+        
+        switch(type){
+        case 1:
+            
+            item1 = RMParallaxItem(image: image1Old!, text: "精确定位",text1: "手机轻松定位电动车")
+            item2 = RMParallaxItem(image: image2Old!, text: "实时报警",text1: "实时监控潜在危险")
+            item3 = RMParallaxItem(image: image3Old!, text: "轨迹追踪",text1: "准确、智能的轨迹追踪")
+            
+            
+            rmParallaxViewController = RMParallax(items: [item1, item2, item3], motion: true)
+            
+            
+            rmParallaxViewController.types = Types.Connect
+            
+            rmParallaxViewController.loginHandler={
+                
+                if(Cache.USER != nil && Cache.USER.isloginout == true){
+                    
+                    //跳到登陆页
+                    var sb = UIStoryboard(name: "Main", bundle:nil)
+                    var vc = sb.instantiateViewControllerWithIdentifier("loginView") as!  LoginController
+                    vc.hidesBottomBarWhenPushed = true
+                    CommonUtil.transitionWithType(kCATransitionMoveIn, withSubType: kCATransitionFromTop, forView: self.view.window!)
+                    self.navigationController?.pushViewController(vc, animated: false)
+                    
+                    
+                }else{
+                    var sb = UIStoryboard(name: "Main", bundle:nil)
+                    var vc = sb.instantiateViewControllerWithIdentifier("readqrcode") as!  ReadQrCodeController
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }
+                
+                
+                
+                
+            }
+            
+            
+            rmParallaxViewController.registerHandler={
+                var sb = UIStoryboard(name: "Main", bundle:nil)
+                var vc = sb.instantiateViewControllerWithIdentifier("ebickGarageController") as!  EbickGarageController
+                vc.businessScope = nil
+                vc.brandId = nil
+                vc.lxbDeviceSellFlag = 1
+                vc.pagetitle = "乐行宝指定商铺"
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            
+            
+            rmParallaxViewController.backHandler={
+                CommonUtil.transitionWithType(kCATransitionFade, withSubType: kCATransitionFromLeft, forView: self.view.window!)
+                
+                self.navigationController?.popViewControllerAnimated(false)
+                
+            }
+            
+            
+            break;
+        case 2:
+            rmParallaxViewController.types = Types.None
+            break;
+        default:
+            rmParallaxViewController.types = Types.Normal
+            
+            //            rmParallaxViewController.loginHandler={
+            //
+            //                CommonUtil.backToView(self, name: "navlogin", type:kCATransitionMoveIn, subtype: kCATransitionFromTop)
+            //
+            //
+            //            }
+            //
+            //            rmParallaxViewController.registerHandler={
+            //                CommonUtil.backToView(self, name: "navregister", type:kCATransitionMoveIn ,subtype: kCATransitionFromTop)
+            //
+            //            }
+            
+            
+            
+            break;
+            
+            
+        }
+        
+        
+        
+        // Adding parallax view controller.
+        self.addChildViewController(rmParallaxViewController)
+        self.view.addSubview(rmParallaxViewController.view)
+        rmParallaxViewController.didMoveToParentViewController(self)
+        
+        
+        
+        
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarHidden = true
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarHidden = false
+        
+        self.navigationController?.navigationBar.hidden = false
+        
+    }
+    
+    
+    
+    override func prefersStatusBarHidden() -> Bool {
+        //self.performSegueWithIdentifier("launchtomain", sender: self)
+        return true
+    }
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.Default
+    }
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        println("***********")
+    }
+    
+    
+    
+    
+    
+    
+}
+

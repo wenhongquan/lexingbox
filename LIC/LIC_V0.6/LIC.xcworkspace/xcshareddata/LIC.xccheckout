@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>42844060-1AA5-4088-8F05-2BCE25222C45</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LIC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>caaed83b-81b1-5141-836a-d4720ad32d28++7423</key>
+		<string>svn://192.168.199.188/LEXING/branch/LIC</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LIC_V0.6/LIC.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>caaed83b-81b1-5141-836a-d4720ad32d28++7423</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>caaed83b-81b1-5141-836a-d4720ad32d28++7423</key>
+		<string>svn://192.168.199.188/LEXING</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://192.168.199.188/LEXING/branch/LIC/LIC_V0.6/LIC.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>caaed83b-81b1-5141-836a-d4720ad32d28++7423</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>caaed83b-81b1-5141-836a-d4720ad32d28++7423</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LIC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+platform :ios, '7.0'
+
+pod 'Baidu-Maps-iOS-SDK'
+pod 'JGProgressHUD'
+pod 'MJRefresh'
+pod 'FSCalendar', '~> 0.9.0'
+pod 'NJKWebViewProgress'
+pod 'Reachability'
+pod 'BFPaperTabBarController', '~> 2.1.10'
+pod 'GDIIndexBar'
+pod 'SDWebImage', '~>3.7'
+pod 'Weixin', '~> 1.5'

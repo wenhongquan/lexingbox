@@ -1,0 +1,338 @@
+//
+//  VerificationCodeController.swift
+//  LIC
+//
+//  Created by 温红权 on 15/3/17.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+
+import UIKit
+//import ObjectMapper
+
+class VerificationCodeController: BaseController {
+    
+    var userPhone="";
+    
+    @IBOutlet weak var phoneNumberLable: UILabel!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    
+    @IBOutlet weak var CountdownLable: UILabel!
+    
+    @IBOutlet weak var code: UITextField!
+    
+    @IBOutlet weak var CountdownButton: UIButton!
+    var lasttime=60;
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        CountdownLable.tintColor=UIColor.blueColor()
+        CountdownButton.addTarget(self, action: "lostCode:", forControlEvents: UIControlEvents.TouchUpInside)
+        CountdownButton.enabled=false;
+        CountdownButton.setTitle("", forState: UIControlState.Normal)
+        phoneNumberLable.text=userPhone;
+        
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("countdown"), userInfo: nil, repeats: false)
+
+//        code.becomeFirstResponder()
+        
+        codeSubmitButton = CommonUtil.buttonSetImage(codeSubmitButton,name:"greenbigbtn",states:[UIControlState.Selected,UIControlState.Normal,UIControlState.Highlighted,UIControlState.Disabled])
+        
+        code.attributedPlaceholder =
+            NSAttributedString(string:"请输入验证码", attributes: [
+                NSFontAttributeName: UIFont.systemFontOfSize(21)
+            ])
+  
+       code.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center;
+        
+        
+       initUI()
+        
+        
+       
+        
+    }
+    
+    func initUI(){
+        
+        
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+        
+        self.navigationItem.title = "填写验证码"
+        
+        self.navigationController?.navigationBar.tintColor=UIColor.whiteColor()
+        
+        
+        CommonUtil.setNavigationControllerBackground(self)
+        
+        
+        var backButton = UIBarButtonItem()
+        
+        backButton.action="backLaunch:"
+        backButton.title = "取消"
+        backButton.tintColor = UIColor.whiteColor()
+        backButton.target=self;
+        
+        
+        self.navigationItem.setLeftBarButtonItems([backButton], animated: true)
+    }
+
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+          disableNetWork = true
+        if(BaseString.NetWorkEnable){
+            networkEnable()
+        }else{
+            networkDisable()
+        }
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBOutlet weak var codeSubmitButton: UIButton!
+    @IBAction func codeSubmit(sender: AnyObject) {
+        self.view.endEditing(true)
+        var user:UserBase = UserBase();
+        user.code = code.text
+        user.phone = BaseString.USERPHONE
+        
+        if(BaseString.ISTEST){
+            
+            var sb = UIStoryboard(name: "Main", bundle:nil)
+            var vc = sb.instantiateViewControllerWithIdentifier("passwordSettingView") as! PassWordSettingController
+            vc.userPhone=self.userPhone
+            vc.code=self.code.text
+            CommonUtil.transitionWithType(kCATransitionMoveIn, withSubType: kCATransitionFromTop, forView: self.view.window!)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: false)
+        
+        }else{
+        
+        UserService.sharedUserService.CodeValidate({(data)in
+            
+            
+             if data["status"].int == StatusCode.SystemSC.SYSTEM_OK {
+                
+                var sb = UIStoryboard(name: "Main", bundle:nil)
+                var vc = sb.instantiateViewControllerWithIdentifier("passwordSettingView") as! PassWordSettingController
+                vc.userPhone=self.userPhone
+                vc.code=self.code.text
+                CommonUtil.transitionWithType(kCATransitionMoveIn, withSubType: kCATransitionFromTop, forView: self.view.window!)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: false)
+
+                
+             }else if data["status"].int == StatusCode.UserSC.VALIDATE_FIAL {
+                
+                CommonUtil.alertView(self, title: "验证码已失效", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+                
+             }else if data["status"].int == StatusCode.UserSC.VALIDATE_ERROR {
+                
+                CommonUtil.alertView(self, title: "验证码不正确，请重新输入", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+             }else if data["status"].int == StatusCode.UserSC.NO_VALIDATE {
+                
+                CommonUtil.alertView(self, title: "验证码不正确，请重新输入", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+            }
+            
+        
+        
+        }, errorHandler: {(data)in
+            
+        }, body:(Mapper().toJSON(user)))
+        
+        }
+           }
+    
+    
+    @IBAction func CodeInput(sender: AnyObject) {
+       
+        if(code.text  != ""){
+            
+            codeSubmitButton.enabled=true
+        }else{
+            codeSubmitButton.enabled=false
+        }
+
+        ValidateCode(code)
+    }
+    
+    func backLaunch(sender: UIButton){
+        CommonUtil.alertView(self, title: "验证码短信可能略有延迟，确定返回并重新开始？", message: "", buttons: [AlertHandler(title: "等待", handle: {}),AlertHandler(title: "返回", handle: {
+            
+            CommonUtil.transitionWithType(kCATransitionReveal, withSubType: kCATransitionFromBottom, forView:self.view.window!)
+            
+            self.navigationController?.popViewControllerAnimated(false)
+           
+            
+            
+       
+        })])
+        
+        
+        
+    }
+    
+    func countdown(){
+        CountdownLable.text="接收短信大约需要 "+lasttime.description+" 秒"
+        
+        if(lasttime>0){
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("countdown"), userInfo: nil, repeats: false)
+            lasttime--;
+        }else{
+            
+            CountdownLable.text=""
+            CountdownButton.enabled=true;
+            CountdownButton.setTitle("收不到验证码？", forState: UIControlState.Normal)
+            CountdownButton.titleLabel?.font = UIFont.systemFontOfSize(16)
+            CountdownButton.setTitleColor(CommonUtil.UIColorFromRGB(0x576b95), forState: UIControlState.Normal)
+            
+        }
+    }
+    
+    func lostCode(sender: UIButton){
+        self.view.endEditing(true)
+        
+       
+        if ((UIDevice.currentDevice().systemVersion as NSString).doubleValue >= 8.0){
+            
+            
+            let shareMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            
+            let regetcode = UIAlertAction(title: "重新获取验证码", style: .Default ) { (_) in
+                
+                var user:UserBase = UserBase();
+                user.phone=BaseString.USERPHONE
+                
+                if(BaseString.ISTEST){
+                    
+                    self.CountdownLable.text = ("接收短信大约需要 60 秒")
+                    self.CountdownButton.setTitle("", forState: UIControlState.Normal)
+                    self.CountdownButton.enabled=false;
+                    self.lasttime=60
+                    self.countdown()
+                }else{
+                    UserService.sharedUserService.RegisterValidate({ (data) -> Void in
+                        
+                        
+                        
+                        if(data["status"].int == StatusCode.SystemSC.SYSTEM_OK){
+                            
+                            
+                            self.CountdownLable.text = ("接收短信大约需要 60 秒")
+                            self.CountdownButton.setTitle("", forState: UIControlState.Normal)
+                            self.CountdownButton.enabled=false;
+                            self.lasttime=60
+                            self.countdown()
+                            
+                            
+                        }else if data["status"].int == StatusCode.UserSC.VALIDATE_CODE_SMS_UPPER_LIMIT{
+                            
+                            CommonUtil.alertView(self, title: "验证码已达上限", message: self.userPhone+"\n 注册验证码已达到上限，请24小时后再注册", buttons: [AlertHandler(title: "确定", handle: {})])
+                            
+                        }
+                        
+                        
+                        }, errorHandler: { (data) -> Void in
+                            
+                        }, body: (Mapper().toJSON(user)))
+                    
+                }
+                
+                
+            }
+            
+            
+            
+            let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { (_) in }
+            
+            shareMenu.addAction(regetcode)
+            shareMenu.addAction(cancelAction)
+            
+            shareMenu.view.tintColor=UIColor.blackColor()
+            
+            shareMenu.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.allZeros
+            
+            shareMenu.popoverPresentationController?.sourceView = self.view
+            shareMenu.popoverPresentationController?.sourceRect = CGRectMake((self.view.frame.size.width*0.5), (self.view.frame.size.height*0.5), 0, 0);// 显示在中心位置
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+            
+            
+        }else{
+            
+            let shareMenu = UIActionSheetExt(title: nil, delegate: IosActionSheetDegetel.sharedIosActionSheetDegetel, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "重新获取验证码","取消")
+            
+            shareMenu.tag = StatusCode.ActionSheetSC.TEL
+            shareMenu.cancelButtonIndex = 1
+            shareMenu.handles?.append({()in
+              
+                var user:UserBase = UserBase();
+                user.phone=BaseString.USERPHONE
+                
+                if(BaseString.ISTEST){
+                    
+                    self.CountdownLable.text = ("接收短信大约需要 60 秒")
+                    self.CountdownButton.setTitle("", forState: UIControlState.Normal)
+                    self.CountdownButton.enabled=false;
+                    self.lasttime=60
+                    self.countdown()
+                }else{
+                    UserService.sharedUserService.RegisterValidate({ (data) -> Void in
+                        
+                        
+                        
+                        if(data["status"].int == StatusCode.SystemSC.SYSTEM_OK){
+                            
+                            
+                            self.CountdownLable.text = ("接收短信大约需要 60 秒")
+                            self.CountdownButton.setTitle("", forState: UIControlState.Normal)
+                            self.CountdownButton.enabled=false;
+                            self.lasttime=60
+                            self.countdown()
+                            
+                            
+                        }else if data["status"].int == StatusCode.UserSC.VALIDATE_CODE_SMS_UPPER_LIMIT{
+                            
+                            CommonUtil.alertView(self, title: "验证码已达上限", message: self.userPhone+"\n 注册验证码已达到上限，请24小时后再注册", buttons: [AlertHandler(title: "确定", handle: {})])
+                            
+                        }
+                        
+                        
+                        }, errorHandler: { (data) -> Void in
+                            
+                        }, body: (Mapper().toJSON(user)))
+                    
+                }
+
+                
+            })
+            
+            if(self.tabBarController != nil){
+                shareMenu.showFromTabBar(self.tabBarController?.tabBar)
+            }else{
+                shareMenu.showInView(self.view)
+            }
+            
+            
+        }
+
+        
+        
+        
+        
+       
+        
+    }
+    
+    
+    
+}

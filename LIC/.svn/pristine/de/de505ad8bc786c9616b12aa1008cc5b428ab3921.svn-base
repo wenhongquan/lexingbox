@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[FSCalendar collectionView:shouldSelectItemAtIndexPath:]:FSCalendar.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.isHighlighted">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "_swift_release_(swift::HeapObject*):(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "CLLocationManager.locationServicesEnabled()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":VerificationCodeController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BaseString.USERPHONE">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":BaseTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.addressDetail.city">
+            </PersistentString>
+            <PersistentString
+               value = "lastHeadView == networkWaringView">
+            </PersistentString>
+            <PersistentString
+               value = "result.addressDetail">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.USER.isloginout">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":AlarmTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "events.count">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.EBICKSEVENTS.ebicksEvents">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickGarageController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data[&quot;status&quot;].int">
+            </PersistentString>
+            <PersistentString
+               value = "businessPage.totalPage">
+            </PersistentString>
+            <PersistentString
+               value = "businessPage.paged">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":swift-json-class.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dynamicType">
+            </PersistentString>
+            <PersistentString
+               value = "mirror[0].0">
+            </PersistentString>
+            <PersistentString
+               value = "mirror[1].0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":KeychainItemWrapper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":launchview.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.USER.isloginout">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":TrackThePlaybackController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSCalendar.currentCalendar()">
+            </PersistentString>
+            <PersistentString
+               value = "NSDate.fs_dateWithYear(localDate.fs_year, month: localDate.fs_month, day:localDate.fs_day)">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.EBICK">
+            </PersistentString>
+            <PersistentString
+               value = "selectDate">
+            </PersistentString>
+            <PersistentString
+               value = " calendar?.selectedDate">
+            </PersistentString>
+            <PersistentString
+               value = "date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "mach_msg_trap:(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "DEVICE_UUID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":ACCController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "appearViews[1] == start2View">
+            </PersistentString>
+            <PersistentString
+               value = "start1Image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.DEVICE_UUID">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.USER">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":MainIndexController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ispop">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;gpsStatus&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "result.routes[0].distance">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.EBICK">
+            </PersistentString>
+            <PersistentString
+               value = "BaseString.NetWorkEnable">
+            </PersistentString>
+            <PersistentString
+               value = "result.taxiInfo.distance">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;event&quot;][&quot;ebikeId&quot;].int">
+            </PersistentString>
+            <PersistentString
+               value = "connectDeviceButton">
+            </PersistentString>
+            <PersistentString
+               value = " self.tiptopspace.constant">
+            </PersistentString>
+            <PersistentString
+               value = "result.routes[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":WebSocketUtil.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.DEVICE_UUID">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.USER">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickIndexController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myEbicPic.frame">
+            </PersistentString>
+            <PersistentString
+               value = " myEbicPic.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickBrandTableViewComtroller.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "allkey[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":AlarmDetailController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.eventMessages[4].id">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":GpsService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.DEVICE_UUID">
+            </PersistentString>
+            <PersistentString
+               value = "getLexingKey()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":RegisterController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "datas[&quot;status&quot;].int">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickGarageDetailTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "addrLable.frame.width">
+            </PersistentString>
+            <PersistentString
+               value = "busines">
+            </PersistentString>
+            <PersistentString
+               value = "self.allFuncData.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.allFuncData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":TrackTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "numberView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":IosActionSheetDegetel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "actionSheet.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.USER">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":AlarmMapController.swift">
+      </ContextState>
+      <ContextState
+         contextName = ":RouteSearchController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSURL(string: &quot;http://maps.apple.com/?daddr=32.0871051917905,118.903125993105&amp;saddr=32.079468700935,118.905094523465&quot; )">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":CommonUtil.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CLLocationManager.authorizationStatus()">
+            </PersistentString>
+            <PersistentString
+               value = "CLLocationManager.locationServicesEnabled()">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;data&quot;].dictionaryObject">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.EBICK">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;data&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data[key].object">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":HttpUtil.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "urltemp">
+            </PersistentString>
+            <PersistentString
+               value = "NSURLRequest(URL: NSURL(string: urltemp)!)">
+            </PersistentString>
+            <PersistentString
+               value = "Cache.DEVICE_UUID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":RMParallax.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentPageNumber">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.x">
+            </PersistentString>
+            <PersistentString
+               value = "(scrollView.contentOffset.x+self.view.frame.size.width/2) / scrollView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EventService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data[&quot;data&quot;].dictionaryObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":BaseString.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":CityListTableController.swift">
+      </ContextState>
+      <ContextState
+         contextName = ":ReadQrCodeController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "((309)/1136.0) * view.bounds.height">
+            </PersistentString>
+            <PersistentString
+               value = "UIScreen.mainScreen().applicationFrame.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":RepairMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mpview!.annotations[0].index">
+            </PersistentString>
+            <PersistentString
+               value = "allBusiness">
+            </PersistentString>
+            <PersistentString
+               value = "index&gt;allBusiness.count">
+            </PersistentString>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":HYPageControlView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":ForgetPasswordController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BaseString.ISTEST">
+            </PersistentString>
+            <PersistentString
+               value = "data[&quot;status&quot;].int">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":SettingTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":LoginController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.USER">
+            </PersistentString>
+            <PersistentString
+               value = "println(data[&quot;status&quot;])">
+            </PersistentString>
+            <PersistentString
+               value = "Mapper().toJSON(user)">
+            </PersistentString>
+            <PersistentString
+               value = "StatusCode.URL.EBIKE">
+            </PersistentString>
+            <PersistentString
+               value = "StatusCode.URL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickBrandAddTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " locationButton.titleLabel?.text != &quot;&#x8bf7;&#x8bbe;&#x7f6e;&#x8be6;&#x7ec6;&#x5730;&#x5740;&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "BaseString.MOBILEREG.test(phone)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":TabbarController.swift">
+      </ContextState>
+      <ContextState
+         contextName = ":BaseController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "networkWaringView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = ":EbickServiceTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Cache.BANNER!.dictionaryObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

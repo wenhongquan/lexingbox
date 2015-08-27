@@ -1,0 +1,175 @@
+//
+//  PassWordSettingController.swift
+//  LIC
+//
+//  Created by 温红权 on 15/3/17.
+//  Copyright (c) 2015年 &#20048;&#34892;&#22825;&#19979;. All rights reserved.
+//
+
+import UIKit
+//import ObjectMapper
+
+class PassWordSettingController: BaseController,PasswordSettingTableControllerHandlerProtocol {
+    
+    var userPhone="";
+    var code="";
+    
+  
+    @IBOutlet weak var backButton: UIBarButtonItem!
+
+    
+    @IBOutlet weak var complate: UIBarButtonItem!
+    
+    weak var tableControl:PasswordSettingTableController!
+    
+    func passwordInputhandler() {
+        
+        if((tableControl.userPass.text as NSString).length > 0 && (tableControl.userpassagain.text as NSString).length > 0){
+          complate?.enabled = true
+        
+        }else{
+        
+         complate?.enabled = false
+        }
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.backButton.action="backLaunch:"
+        self.backButton.title = "取消"
+        self.backButton.tintColor = UIColor.whiteColor()
+        self.backButton.target=self;
+        
+//        self.complateButton.action="complate:"
+//        self.complateButton.target=self;
+//
+        
+        
+        var button = UIButton()
+        
+        button.frame = CGRectMake(0.0, 2.0,34, 34);
+        button.titleLabel?.textAlignment = NSTextAlignment.Right
+        button.addTarget(self, action: "complate:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.setTitle("完成", forState: UIControlState.Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(17)
+        button.setTitleColor(CommonUtil.UIColorFromRGB(0x01624b), forState: UIControlState.Disabled)
+        button.setTitleColor(CommonUtil.UIColorFromRGB(0x2bcd9c), forState: UIControlState.Normal)
+        button.setTitleColor(CommonUtil.UIColorFromRGB(0x01624b), forState: UIControlState.Selected)
+        button.setTitleColor(CommonUtil.UIColorFromRGB(0x01624b), forState: UIControlState.Highlighted)
+        
+//                button.enabled = false
+        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+
+        complate.customView = button
+        complate?.enabled = false
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+          disableNetWork = true
+        if(BaseString.NetWorkEnable){
+            networkEnable()
+        }else{
+            networkDisable()
+        }
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "SetPasswordSegue") {
+            tableControl = segue.destinationViewController as! PasswordSettingTableController
+            tableControl.passwordtablehandle=self
+            }
+    }
+    
+    func backLaunch(sender: UIButton){
+        
+        CommonUtil.backToView(self, name: "launchView",type: kCATransitionReveal, subtype: kCATransitionFromBottom)
+    }
+
+    func complate(sender: UIButton){
+        self.view.endEditing(true)
+        var pass = tableControl.userPass.text
+        var passs = tableControl.userpassagain.text
+        var phone = tableControl.userName.text
+        
+        if(pass as NSString).length < 8 {
+            
+            CommonUtil.alertView(self, title: "密码不得少于8个字符", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+        
+        }else if(pass != passs){
+
+            CommonUtil.alertView(self, title: "密码不一致，请重新输入", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+        
+        }else{
+             self.view.endEditing(true)
+            
+            var loding = CommonUtil.alertLoding(self, title: "请稍等...")
+            var user:User = User()
+            user.code=code
+            user.phone=phone
+            user.password=pass
+            user.deviceToken=BaseString.DEVICETOKEN
+           
+            UserService.sharedUserService.Register({(data)in
+                if data["status"].int == StatusCode.SystemSC.SYSTEM_OK {
+                    
+                    //缓存用户
+                    Cache.USER = Mapper<User>().map(data["data"].dictionaryObject!)
+                    
+                    if(Cache.USER != nil){
+                        loding.dismiss();
+                        
+                        
+                        //缓存用户
+                        Cache.USER = Mapper<User>().map(data["data"].dictionaryObject!)
+                        
+                        Cache.USER.isloginout = false
+                        
+                        CommonUtil.initEffect()
+                        
+                        //建立websocket
+                        WebSocketUtil.sharedWebSocket.connect()
+                        
+                        //缓存用户
+                        CommonUtil.saveWithNSUserDefaults(Mapper().toJSON(Cache.USER), key: "USER")
+                        
+                        //页面跳转至地图页
+                        CommonUtil.backToView(self, name: "maintab")
+                        
+                        
+                        //获取报警数据
+                        CommonUtil.getEventData()
+                      
+                    }
+                    
+                }else if data["status"].int == StatusCode.UserSC.PHONE_EXISTS {
+                    
+                    CommonUtil.alertView(self, title: "手机号已注册", message: "", buttons: [AlertHandler(title: "确定", handle: {})])
+
+                }
+                
+                
+                }, errorHandler: {(data)in
+            }, body: (Mapper().toJSON(user)))
+        
+        }
+        
+        
+    }
+
+    
+    
+}
+
